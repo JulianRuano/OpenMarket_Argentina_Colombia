@@ -1,0 +1,70 @@
+version: '3.1'
+
+services:
+  delivery:
+    restart: always
+    container_name: delivery-service
+    build:
+      context: ../microservice-delivery
+      dockerfile: Dockerfile
+    env_file:
+      - ../microservice-delivery/.env
+    ports:
+      - 8080:8080
+    volumes:
+      - .:/opt/app/
+    command: ["gradle", "bootRun"]
+    links:
+      - person
+      - product
+      - cart
+
+
+  person:
+    restart: always
+    container_name: person-service
+    build:
+      context: ../microservice-person
+      dockerfile: Dockerfile
+    env_file:
+      - ../microservice-person/.env
+    ports:
+      - 8081:8080
+    volumes:
+      - .:/opt/app/
+    command: ["gradle", "bootRun"]
+    links:
+      - product
+      - cart
+
+
+  product:
+      restart: always
+      container_name: product-service
+      build:
+        context: ../microservice-product
+        dockerfile: Dockerfile
+      env_file:
+        - ../microservice-product/.env
+      ports:
+        - 8082:8080
+      volumes:
+        - .:/opt/app/
+      command: ["gradle", "bootRun"]
+      links:
+        - cart
+
+
+  cart:
+    restart: always
+    container_name: cart-service
+    build:
+      context: ../microservice-cart
+      dockerfile: Dockerfile
+    env_file:
+      - ../microservice-cart/.env
+    ports:
+      - 8083:8080
+    volumes:
+      - .:/opt/app/
+    command: ["gradle", "bootRun"]

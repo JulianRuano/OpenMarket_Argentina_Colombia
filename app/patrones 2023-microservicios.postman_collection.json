@@ -1,0 +1,936 @@
+{
+	"info": {
+		"_postman_id": "7b26d73b-7c2d-4e8c-8655-4425ea3521d3",
+		"name": "patrones 2023-microservicios",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18428022",
+		"_collection_link": "https://orange-moon-534205.postman.co/workspace/Patrones-Workspace~4faa2669-55d4-491f-8ccd-e9fac683c0ad/collection/18428022-7b26d73b-7c2d-4e8c-8655-4425ea3521d3?action=share&creator=18428022&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "microservicio-product",
+			"item": [
+				{
+					"name": "Producto",
+					"item": [
+						{
+							"name": "get products",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{product-host}}/products",
+									"host": [
+										"{{product-host}}"
+									],
+									"path": [
+										"products"
+									]
+								},
+								"description": "## Obtener un producto por id\nRecibe un id al final de la url"
+							},
+							"response": []
+						},
+						{
+							"name": "get product by id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{product-host}}/products/1",
+									"host": [
+										"{{product-host}}"
+									],
+									"path": [
+										"products",
+										"1"
+									]
+								},
+								"description": "## Eliminar un producto\nRecibe un id al final de la url"
+							},
+							"response": []
+						},
+						{
+							"name": "delete product",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{product-host}}/products/1",
+									"host": [
+										"{{product-host}}"
+									],
+									"path": [
+										"products",
+										"1"
+									]
+								},
+								"description": "## Actualizar un producto \nRecibe un id al final de la url, en el body se inserta los nuevos campos de producto"
+							},
+							"response": []
+						},
+						{
+							"name": "update product",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"name\": \"aguacate\",\r\n\t\"price\": 13000,\r\n\t\"description\": \"aguacate mantequillo\",\r\n\t\"category\": \"enceres\",\r\n\t\"personId\":1,\r\n\t\"address\": {\r\n\t\t\"street\": \"cra 7 street avenue\",\r\n\t\t\"houseNumber\": 9,\r\n\t\t\"city\": \"medellin\",\r\n\t\t\"province\": \"antioquia\",\r\n\t\t\"country\": \"colombia\"\r\n\t}\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{product-host}}/products/1",
+									"host": [
+										"{{product-host}}"
+									],
+									"path": [
+										"products",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "create product",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"name\": \"aguacate\",\r\n\t\"price\": 12000,\r\n\t\"description\": \"aguacate mantequillo\",\r\n\t\"category\": \"enceres\",\r\n\t\"personId\":1,\r\n\t\"address\": {\r\n\t\t\"street\": \"cra 7 street avenue\",\r\n\t\t\"houseNumber\": 9,\r\n\t\t\"city\": \"medellin\",\r\n\t\t\"province\": \"antioquia\",\r\n\t\t\"country\": \"colombia\"\r\n\t}\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{product-host}}/products",
+									"host": [
+										"{{product-host}}"
+									],
+									"path": [
+										"products"
+									]
+								},
+								"description": "## Crear producto\nRecibe un JSON con los campos de producto en el body"
+							},
+							"response": []
+						}
+					],
+					"description": "## Obtener todos los productos creados"
+				},
+				{
+					"name": "publication",
+					"item": [
+						{
+							"name": "create publication",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"stock\":12,\r\n    \"sellPrice\":5000.8,\r\n    \"minPrice\":4500.0,\r\n    \"maxPrice\":5500.0,\r\n    \"isActive\":true,\r\n    \"productId\":1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/publications",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"publications"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get publications",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{product-host}}/publications",
+									"host": [
+										"{{product-host}}"
+									],
+									"path": [
+										"publications"
+									]
+								},
+								"description": "## Obtener publicaciones creadas"
+							},
+							"response": []
+						},
+						{
+							"name": "get publication by id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{product-host}}/publications/1",
+									"host": [
+										"{{product-host}}"
+									],
+									"path": [
+										"publications",
+										"1"
+									]
+								},
+								"description": "## Obtener publicacion por id"
+							},
+							"response": []
+						},
+						{
+							"name": "suspend publication",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{product-host}}/publications/suspend/1",
+									"host": [
+										"{{product-host}}"
+									],
+									"path": [
+										"publications",
+										"suspend",
+										"1"
+									]
+								},
+								"description": "## Suspender publicación\nRecibe el id de la publicación al final de la url a la que queremos pausar o suspender"
+							},
+							"response": []
+						},
+						{
+							"name": "filter publications by product",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{product-host}}/publications/filter?name=aguacate&country=col&maxprice=12222&minprice=1000&description=mantequillo",
+									"host": [
+										"{{product-host}}"
+									],
+									"path": [
+										"publications",
+										"filter"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "aguacate"
+										},
+										{
+											"key": "country",
+											"value": "col"
+										},
+										{
+											"key": "maxprice",
+											"value": "12222"
+										},
+										{
+											"key": "minprice",
+											"value": "1000"
+										},
+										{
+											"key": "description",
+											"value": "mantequillo"
+										}
+									]
+								},
+								"description": "## Filtrar publicaciones por producto\nParametros (opcionales):\n\n| Parámetro | Tipo   |\n|-----------|--------|\n| name | String|\n| description| String|\n| minPrice| int|\n| maxPrice| int|\n| country| String|"
+							},
+							"response": []
+						},
+						{
+							"name": "decrease stock",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{product-host}}/publications/decreaseStock?id=1&quantity=1",
+									"host": [
+										"{{product-host}}"
+									],
+									"path": [
+										"publications",
+										"decreaseStock"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "1"
+										},
+										{
+											"key": "quantity",
+											"value": "1"
+										}
+									]
+								},
+								"description": "## Decrementar stock de la publicacion\nRecibe el id de la publicación al final del url"
+							},
+							"response": []
+						}
+					],
+					"description": "## Crear publicación\nRecibe un JSON con los campos de publicación en el body"
+				}
+			]
+		},
+		{
+			"name": "microservicio-person",
+			"item": [
+				{
+					"name": "Auth",
+					"item": [
+						{
+							"name": "Login",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"postman.setEnvironmentVariable(\"token\", responseBody);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\":\"pedro@gmail.com\",\n  \"password\":\"123\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{person-host}}/auth/login",
+									"host": [
+										"{{person-host}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Address",
+					"item": [
+						{
+							"name": "Create Address",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"street\": 44,\n    \"houseNumber\": 63,\n    \"floorNumber\": 1,\n    \"department\": 4,\n    \"city\": \"Vancouver\",\n    \"province\": \"British Columbia\",\n    \"country\": \"Canada\",\n    \"person_id\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{person-host}}/address",
+									"host": [
+										"{{person-host}}"
+									],
+									"path": [
+										"address"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Adresses",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{person-host}}/address",
+									"host": [
+										"{{person-host}}"
+									],
+									"path": [
+										"address"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Addresses By Id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{person-host}}/address/1",
+									"host": [
+										"{{person-host}}"
+									],
+									"path": [
+										"address",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Addresses By PersonId",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{person-host}}/address?personId=1",
+									"host": [
+										"{{person-host}}"
+									],
+									"path": [
+										"address"
+									],
+									"query": [
+										{
+											"key": "personId",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Billing Address By PersonId",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{person-host}}/address/billingAddress?personId=1",
+									"host": [
+										"{{person-host}}"
+									],
+									"path": [
+										"address",
+										"billingAddress"
+									],
+									"query": [
+										{
+											"key": "personId",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Shipping Address By Person Id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{person-host}}/address/shippingAddress?personId=1",
+									"host": [
+										"{{person-host}}"
+									],
+									"path": [
+										"address",
+										"shippingAddress"
+									],
+									"query": [
+										{
+											"key": "personId",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Person",
+					"item": [
+						{
+							"name": "Create a person",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"firstName\":\"Francisco\",\n    \"lastName\":\"Diaz\",\n    \"birth\":\"1999-02-16\",\n    \"email\":\"asd@gmail.com\",\n    \"password\": \"123\",\n    \"role\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/person",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"person"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Persons",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/person",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"person"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Person By Id",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/person/1",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"person",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Person By Email",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/person?email=carlo@gmail.com",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"person"
+									],
+									"query": [
+										{
+											"key": "email",
+											"value": "carlo@gmail.com"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "microservicio-delivery",
+			"item": [
+				{
+					"name": "get deliveries",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/deliveries",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"deliveries"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "post delivery",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"deliveryAddress\": {\r\n    \"city\": \"bogota\",\r\n    \"country\": \"colombia\",\r\n    \"department\": 10,\r\n    \"floorNumber\": 10,\r\n    \"houseNumber\": 10,\r\n    \"province\": \"cundinamarca\",\r\n    \"street\": \"cra 7 sur\"\r\n  },\r\n  \"idCheckout\": 1,\r\n  \"idPerson\": 1,\r\n  \"idPublication\": 1,\r\n  \"quantity\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{delivery-host}}/api/deliveries",
+							"host": [
+								"{{delivery-host}}"
+							],
+							"path": [
+								"api",
+								"deliveries"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cancel delivery",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"deliveryAddress\": {\r\n    \"city\": \"bogota\",\r\n    \"country\": \"colombia\",\r\n    \"department\": 10,\r\n    \"floorNumber\": 10,\r\n    \"houseNumber\": 10,\r\n    \"province\": \"cundinamarca\",\r\n    \"street\": \"cra 7 sur\"\r\n  },\r\n  \"idCheckout\": 1,\r\n  \"idPerson\": 1,\r\n  \"idPublication\": 1,\r\n  \"quantity\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{delivery-host}}/api/deliveries/cancel/1",
+							"host": [
+								"{{delivery-host}}"
+							],
+							"path": [
+								"api",
+								"deliveries",
+								"cancel",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deliver order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"deliveryAddress\": {\r\n    \"city\": \"bogota\",\r\n    \"country\": \"colombia\",\r\n    \"department\": 10,\r\n    \"floorNumber\": 10,\r\n    \"houseNumber\": 10,\r\n    \"province\": \"cundinamarca\",\r\n    \"street\": \"cra 7 sur\"\r\n  },\r\n  \"idCheckout\": 1,\r\n  \"idPerson\": 1,\r\n  \"idPublication\": 1,\r\n  \"quantity\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{delivery-host}}/deliveries/deliver/1",
+							"host": [
+								"{{delivery-host}}"
+							],
+							"path": [
+								"deliveries",
+								"deliver",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "take order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"deliveryAddress\": {\r\n    \"city\": \"bogota\",\r\n    \"country\": \"colombia\",\r\n    \"department\": 10,\r\n    \"floorNumber\": 10,\r\n    \"houseNumber\": 10,\r\n    \"province\": \"cundinamarca\",\r\n    \"street\": \"cra 7 sur\"\r\n  },\r\n  \"idCheckout\": 1,\r\n  \"idPerson\": 1,\r\n  \"idPublication\": 1,\r\n  \"quantity\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{delivery-host}}/deliveries/take/1",
+							"host": [
+								"{{delivery-host}}"
+							],
+							"path": [
+								"deliveries",
+								"take",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "microservicio-cart",
+			"item": [
+				{
+					"name": "checkout",
+					"item": [
+						{
+							"name": "Get Checkouts By Person JWT Id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{cart-host}}/checkouts",
+									"host": [
+										"{{cart-host}}"
+									],
+									"path": [
+										"checkouts"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Checkout By Id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{cart-host}}/checkout/1",
+									"host": [
+										"{{cart-host}}"
+									],
+									"path": [
+										"checkout",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Checkout by person id",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{cart-host}}/checkouts",
+									"host": [
+										"{{cart-host}}"
+									],
+									"path": [
+										"checkouts"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "shopping-cart",
+					"item": [
+						{
+							"name": "Get Shopping cart by person id",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "Add Product to Shopping Cart",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"publicationId\": \"1\",\n  \"quantity\": 10\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Clear Shopping Cart",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{cart-host}}/shopping-cart/clear",
+									"host": [
+										"{{cart-host}}"
+									],
+									"path": [
+										"shopping-cart",
+										"clear"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Product of shopping cart",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"publicationId\": \"1\",\n  \"quantity\": 10\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{cart-host}}/shopping-cart/",
+									"host": [
+										"{{cart-host}}"
+									],
+									"path": [
+										"shopping-cart",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "person-host",
+			"value": "http://localhost:8081/api",
+			"type": "string"
+		},
+		{
+			"key": "delivery-host",
+			"value": "http://localhost:8080/api",
+			"type": "string"
+		},
+		{
+			"key": "product-host",
+			"value": "http://localhost:8082/api",
+			"type": "string"
+		},
+		{
+			"key": "cart-host",
+			"value": "http://localhost:8083/api",
+			"type": "string"
+		}
+	]
+}

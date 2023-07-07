@@ -1,0 +1,61 @@
+version: '3.1'
+
+services:
+  delivery:
+    restart: always
+    container_name: delivery-service
+    image: registry.gitlab.com/facultades-microservicios/microservice-delivery:latest
+    environment:
+      - .env
+    ports:
+      - 8080:8080
+    volumes:
+      - .:/opt/app/
+    command: ["gradle", "bootRun"]
+    links:
+      - person
+      - product
+      - seller
+
+  person:
+    restart: always
+    container_name: person-service
+    image: registry.gitlab.com/facultades-microservicios/microservice-person:latest
+    environment:
+      - .env
+    ports:
+      - 8081:8080
+    volumes:
+      - .:/opt/app/
+    command: ["gradle", "bootRun"]
+    links:
+      - product
+      - seller
+
+
+  product:
+      restart: always
+      container_name: product-service
+      image: registry.gitlab.com/facultades-microservicios/microservice-product:latest
+      environment:
+        - .env
+      ports:
+        - 8082:8080
+      volumes:
+        - .:/opt/app/
+      command: ["gradle", "bootRun"]
+      links:
+        - seller
+
+
+  cart:
+    restart: always
+    container_name: seller-cart
+    image: registry.gitlab.com/facultades-microservicios/microservice-cart:latest
+    environment:
+      - .env
+    ports:
+      - 8083:8080
+    volumes:
+      - .:/opt/app/
+    command: ["gradle", "bootRun"]

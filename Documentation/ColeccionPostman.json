@@ -1,0 +1,1259 @@
+{
+  "collection": {
+    "info": {
+      "_postman_id": "09474e60-4282-486c-be44-f31c48c6c539",
+      "name": "patrones 2023-microservicios",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+      "updatedAt": "2023-07-06T20:48:01.000Z",
+      "uid": "15716447-09474e60-4282-486c-be44-f31c48c6c539"
+    },
+    "item": [
+      {
+        "name": "microservicio-product",
+        "item": [
+          {
+            "name": "Producto",
+            "item": [
+              {
+                "name": "get products",
+                "id": "ebf8b928-2957-48a9-ab0c-638c9190aef5",
+                "protocolProfileBehavior": {
+                  "disableBodyPruning": true
+                },
+                "request": {
+                  "method": "GET",
+                  "header": [
+                    
+                  ],
+                  "url": {
+                    "raw": "{{product-host}}/products",
+                    "host": [
+                      "{{product-host}}"
+                    ],
+                    "path": [
+                      "products"
+                    ]
+                  },
+                  "description": "## Obtener un producto por id\nRecibe un id al final de la url"
+                },
+                "response": [
+                  
+                ],
+                "uid": "15716447-ebf8b928-2957-48a9-ab0c-638c9190aef5"
+              },
+              {
+                "name": "get product by id",
+                "id": "14277f12-9219-4691-b279-41e912de60a1",
+                "protocolProfileBehavior": {
+                  "disableBodyPruning": true
+                },
+                "request": {
+                  "method": "GET",
+                  "header": [
+                    
+                  ],
+                  "url": {
+                    "raw": "{{product-host}}/products/1",
+                    "host": [
+                      "{{product-host}}"
+                    ],
+                    "path": [
+                      "products",
+                      "1"
+                    ]
+                  },
+                  "description": "## Eliminar un producto\nRecibe un id al final de la url"
+                },
+                "response": [
+                  
+                ],
+                "uid": "15716447-14277f12-9219-4691-b279-41e912de60a1"
+              },
+              {
+                "name": "delete product",
+                "id": "47249bae-d275-408f-8f88-8b071c1c5d70",
+                "protocolProfileBehavior": {
+                  "disableBodyPruning": true
+                },
+                "request": {
+                  "method": "DELETE",
+                  "header": [
+                    
+                  ],
+                  "url": {
+                    "raw": "{{product-host}}/products/1",
+                    "host": [
+                      "{{product-host}}"
+                    ],
+                    "path": [
+                      "products",
+                      "1"
+                    ]
+                  },
+                  "description": "## Actualizar un producto \nRecibe un id al final de la url, en el body se inserta los nuevos campos de producto"
+                },
+                "response": [
+                  
+                ],
+                "uid": "15716447-47249bae-d275-408f-8f88-8b071c1c5d70"
+              },
+              {
+                "name": "update product",
+                "id": "5fe8c6f9-8188-48b2-bd8f-23c37a81c3a7",
+                "protocolProfileBehavior": {
+                  "disableBodyPruning": true
+                },
+                "request": {
+                  "method": "PUT",
+                  "header": [
+                    
+                  ],
+                  "body": {
+                    "mode": "raw",
+                    "raw": "{\r\n\t\"name\": \"aguacate\",\r\n\t\"price\": 13000,\r\n\t\"description\": \"aguacate mantequillo\",\r\n\t\"category\": \"enceres\",\r\n\t\"personId\":1,\r\n\t\"address\": {\r\n\t\t\"street\": \"cra 7 street avenue\",\r\n\t\t\"houseNumber\": 9,\r\n\t\t\"city\": \"medellin\",\r\n\t\t\"province\": \"antioquia\",\r\n\t\t\"country\": \"colombia\"\r\n\t}\r\n}",
+                    "options": {
+                      "raw": {
+                        "language": "json"
+                      }
+                    }
+                  },
+                  "url": {
+                    "raw": "{{product-host}}/products/1",
+                    "host": [
+                      "{{product-host}}"
+                    ],
+                    "path": [
+                      "products",
+                      "1"
+                    ]
+                  }
+                },
+                "response": [
+                  
+                ],
+                "uid": "15716447-5fe8c6f9-8188-48b2-bd8f-23c37a81c3a7"
+              },
+              {
+                "name": "create product",
+                "id": "4bdeec4a-1033-4f90-b4b8-614ff81900fe",
+                "protocolProfileBehavior": {
+                  "disableBodyPruning": true
+                },
+                "request": {
+                  "method": "POST",
+                  "header": [
+                    
+                  ],
+                  "body": {
+                    "mode": "raw",
+                    "raw": "{\r\n\t\"name\": \"aguacate\",\r\n\t\"price\": 12000,\r\n\t\"description\": \"aguacate mantequillo\",\r\n\t\"category\": \"enceres\",\r\n\t\"personId\":1,\r\n\t\"address\": {\r\n\t\t\"street\": \"cra 7 street avenue\",\r\n\t\t\"houseNumber\": 9,\r\n\t\t\"city\": \"medellin\",\r\n\t\t\"province\": \"antioquia\",\r\n\t\t\"country\": \"colombia\"\r\n\t}\r\n}",
+                    "options": {
+                      "raw": {
+                        "language": "json"
+                      }
+                    }
+                  },
+                  "url": {
+                    "raw": "{{product-host}}/products",
+                    "host": [
+                      "{{product-host}}"
+                    ],
+                    "path": [
+                      "products"
+                    ]
+                  },
+                  "description": "## Crear producto\nRecibe un JSON con los campos de producto en el body"
+                },
+                "response": [
+                  
+                ],
+                "uid": "15716447-4bdeec4a-1033-4f90-b4b8-614ff81900fe"
+              }
+            ],
+            "id": "7f0d214c-7083-45c4-9886-917f34f43009",
+            "description": "## Obtener todos los productos creados",
+            "uid": "15716447-7f0d214c-7083-45c4-9886-917f34f43009"
+          },
+          {
+            "name": "publication",
+            "item": [
+              {
+                "name": "create publication",
+                "id": "3456668c-3659-45b2-8a6c-9b9e53202c84",
+                "protocolProfileBehavior": {
+                  "disableBodyPruning": true
+                },
+                "request": {
+                  "method": "POST",
+                  "header": [
+                    
+                  ],
+                  "body": {
+                    "mode": "raw",
+                    "raw": "{\r\n    \"stock\":12,\r\n    \"sellPrice\":5000.8,\r\n    \"minPrice\":4500.0,\r\n    \"maxPrice\":5500.0,\r\n    \"isActive\":true,\r\n    \"productId\":1\r\n}",
+                    "options": {
+                      "raw": {
+                        "language": "json"
+                      }
+                    }
+                  },
+                  "url": {
+                    "raw": "{{product-host}}/publications",
+                    "host": [
+                      "{{product-host}}"
+                    ],
+                    "path": [
+                      "publications"
+                    ]
+                  }
+                },
+                "response": [
+                  
+                ],
+                "uid": "15716447-3456668c-3659-45b2-8a6c-9b9e53202c84"
+              },
+              {
+                "name": "get publications",
+                "id": "825b8af8-6269-4b15-bb57-090d6bd24da7",
+                "protocolProfileBehavior": {
+                  "disableBodyPruning": true
+                },
+                "request": {
+                  "method": "GET",
+                  "header": [
+                    
+                  ],
+                  "url": {
+                    "raw": "{{product-host}}/publications",
+                    "host": [
+                      "{{product-host}}"
+                    ],
+                    "path": [
+                      "publications"
+                    ]
+                  },
+                  "description": "## Obtener publicaciones creadas"
+                },
+                "response": [
+                  
+                ],
+                "uid": "15716447-825b8af8-6269-4b15-bb57-090d6bd24da7"
+              },
+              {
+                "name": "get publication by id",
+                "id": "8a44d19e-39ec-4fd0-9e6a-7905cee4d0ff",
+                "protocolProfileBehavior": {
+                  "disableBodyPruning": true
+                },
+                "request": {
+                  "method": "GET",
+                  "header": [
+                    
+                  ],
+                  "url": {
+                    "raw": "{{product-host}}/publications/1",
+                    "host": [
+                      "{{product-host}}"
+                    ],
+                    "path": [
+                      "publications",
+                      "1"
+                    ]
+                  },
+                  "description": "## Obtener publicacion por id"
+                },
+                "response": [
+                  
+                ],
+                "uid": "15716447-8a44d19e-39ec-4fd0-9e6a-7905cee4d0ff"
+              },
+              {
+                "name": "suspend publication",
+                "id": "7a5e7d6d-393a-415a-a258-14928b1b990b",
+                "protocolProfileBehavior": {
+                  "disableBodyPruning": true
+                },
+                "request": {
+                  "method": "POST",
+                  "header": [
+                    
+                  ],
+                  "url": {
+                    "raw": "{{product-host}}/publications/suspend/1",
+                    "host": [
+                      "{{product-host}}"
+                    ],
+                    "path": [
+                      "publications",
+                      "suspend",
+                      "1"
+                    ]
+                  },
+                  "description": "## Suspender publicación\nRecibe el id de la publicación al final de la url a la que queremos pausar o suspender"
+                },
+                "response": [
+                  
+                ],
+                "uid": "15716447-7a5e7d6d-393a-415a-a258-14928b1b990b"
+              },
+              {
+                "name": "filter publications by product",
+                "id": "a241ebce-8cb2-49d6-8fb5-e27e6540b209",
+                "protocolProfileBehavior": {
+                  "disableBodyPruning": true
+                },
+                "request": {
+                  "method": "GET",
+                  "header": [
+                    
+                  ],
+                  "url": {
+                    "raw": "{{product-host}}/publications/filter?name=aguacate&country=col&maxprice=12222&minprice=1000&description=mantequillo",
+                    "host": [
+                      "{{product-host}}"
+                    ],
+                    "path": [
+                      "publications",
+                      "filter"
+                    ],
+                    "query": [
+                      {
+                        "key": "name",
+                        "value": "aguacate"
+                      },
+                      {
+                        "key": "country",
+                        "value": "col"
+                      },
+                      {
+                        "key": "maxprice",
+                        "value": "12222"
+                      },
+                      {
+                        "key": "minprice",
+                        "value": "1000"
+                      },
+                      {
+                        "key": "description",
+                        "value": "mantequillo"
+                      }
+                    ]
+                  },
+                  "description": "## Filtrar publicaciones por producto\nParametros (opcionales):\n\n| Parámetro | Tipo   |\n|-----------|--------|\n| name | String|\n| description| String|\n| minPrice| int|\n| maxPrice| int|\n| country| String|"
+                },
+                "response": [
+                  
+                ],
+                "uid": "15716447-a241ebce-8cb2-49d6-8fb5-e27e6540b209"
+              },
+              {
+                "name": "decrease stock",
+                "id": "00a4969a-6c8e-4623-8443-cf9205189baf",
+                "protocolProfileBehavior": {
+                  "disableBodyPruning": true
+                },
+                "request": {
+                  "method": "POST",
+                  "header": [
+                    
+                  ],
+                  "url": {
+                    "raw": "{{product-host}}/publications/decreaseStock?id=1&quantity=1",
+                    "host": [
+                      "{{product-host}}"
+                    ],
+                    "path": [
+                      "publications",
+                      "decreaseStock"
+                    ],
+                    "query": [
+                      {
+                        "key": "id",
+                        "value": "1"
+                      },
+                      {
+                        "key": "quantity",
+                        "value": "1"
+                      }
+                    ]
+                  },
+                  "description": "## Decrementar stock de la publicacion\nRecibe el id de la publicación al final del url"
+                },
+                "response": [
+                  
+                ],
+                "uid": "15716447-00a4969a-6c8e-4623-8443-cf9205189baf"
+              }
+            ],
+            "id": "44d1e6c9-befa-4f9c-a0cb-1d701661ad53",
+            "description": "## Crear publicación\nRecibe un JSON con los campos de publicación en el body",
+            "uid": "15716447-44d1e6c9-befa-4f9c-a0cb-1d701661ad53"
+          }
+        ],
+        "id": "ecc0b483-d07f-4365-9b11-c1521d4ae3ab",
+        "uid": "15716447-ecc0b483-d07f-4365-9b11-c1521d4ae3ab"
+      },
+      {
+        "name": "microservicio-person",
+        "item": [
+          {
+            "name": "Auth",
+            "item": [
+              {
+                "name": "Login",
+                "event": [
+                  {
+                    "listen": "test",
+                    "script": {
+                      "exec": [
+                        "postman.setEnvironmentVariable(\"token\", responseBody);"
+                      ],
+                      "type": "text/javascript",
+                      "id": "f516cc8f-548c-4c49-8055-280368e2321d"
+                    }
+                  }
+                ],
+                "id": "ac0a17ee-dcc5-4504-99be-9554f56c0dac",
+                "protocolProfileBehavior": {
+                  "disableBodyPruning": true
+                },
+                "request": {
+                  "auth": {
+                    "type": "noauth"
+                  },
+                  "method": "POST",
+                  "header": [
+                    
+                  ],
+                  "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"username\":\"pedro@gmail.com\",\n  \"password\":\"123\"\n}",
+                    "options": {
+                      "raw": {
+                        "language": "json"
+                      }
+                    }
+                  },
+                  "url": {
+                    "raw": "{{person-host}}/auth/login",
+                    "host": [
+                      "{{person-host}}"
+                    ],
+                    "path": [
+                      "auth",
+                      "login"
+                    ]
+                  }
+                },
+                "response": [
+                  
+                ],
+                "uid": "15716447-ac0a17ee-dcc5-4504-99be-9554f56c0dac"
+              }
+            ],
+            "id": "dd060474-c8f0-42b0-bb9b-21ac9178f548",
+            "uid": "15716447-dd060474-c8f0-42b0-bb9b-21ac9178f548"
+          },
+          {
+            "name": "Address",
+            "item": [
+              {
+                "name": "Create Address",
+                "id": "a687cb5e-7255-4d90-862b-39a033c4c5cf",
+                "protocolProfileBehavior": {
+                  "disableBodyPruning": true
+                },
+                "request": {
+                  "method": "POST",
+                  "header": [
+                    {
+                      "warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+                      "key": "Authorization",
+                      "value": "{{token}}",
+                      "type": "text"
+                    }
+                  ],
+                  "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"street\": 44,\n    \"houseNumber\": 63,\n    \"floorNumber\": 1,\n    \"department\": 4,\n    \"city\": \"Vancouver\",\n    \"province\": \"British Columbia\",\n    \"country\": \"Canada\",\n    \"person_id\": 1\n}",
+                    "options": {
+                      "raw": {
+                        "language": "json"
+                      }
+                    }
+                  },
+                  "url": {
+                    "raw": "{{person-host}}/address",
+                    "host": [
+                      "{{person-host}}"
+                    ],
+                    "path": [
+                      "address"
+                    ]
+                  }
+                },
+                "response": [
+                  
+                ],
+                "uid": "15716447-a687cb5e-7255-4d90-862b-39a033c4c5cf"
+              },
+              {
+                "name": "Get Adresses",
+                "id": "9760eb1e-ed9c-4065-8402-3df1abb58612",
+                "protocolProfileBehavior": {
+                  "disableBodyPruning": true
+                },
+                "request": {
+                  "method": "GET",
+                  "header": [
+                    {
+                      "key": "Authorization",
+                      "value": "{{token}}",
+                      "type": "text"
+                    }
+                  ],
+                  "url": {
+                    "raw": "{{person-host}}/address",
+                    "host": [
+                      "{{person-host}}"
+                    ],
+                    "path": [
+                      "address"
+                    ]
+                  }
+                },
+                "response": [
+                  
+                ],
+                "uid": "15716447-9760eb1e-ed9c-4065-8402-3df1abb58612"
+              },
+              {
+                "name": "Get Addresses By Id",
+                "id": "0e695477-5ec2-4a92-85c2-5f5b275f5ad6",
+                "protocolProfileBehavior": {
+                  "disableBodyPruning": true
+                },
+                "request": {
+                  "method": "GET",
+                  "header": [
+                    
+                  ],
+                  "url": {
+                    "raw": "{{person-host}}/address/1",
+                    "host": [
+                      "{{person-host}}"
+                    ],
+                    "path": [
+                      "address",
+                      "1"
+                    ]
+                  }
+                },
+                "response": [
+                  
+                ],
+                "uid": "15716447-0e695477-5ec2-4a92-85c2-5f5b275f5ad6"
+              },
+              {
+                "name": "Get Addresses By PersonId",
+                "id": "575ecfc5-9ab2-4798-ac1e-bbe9ef63bd9b",
+                "protocolProfileBehavior": {
+                  "disableBodyPruning": true
+                },
+                "request": {
+                  "method": "GET",
+                  "header": [
+                    
+                  ],
+                  "url": {
+                    "raw": "{{person-host}}/address?personId=1",
+                    "host": [
+                      "{{person-host}}"
+                    ],
+                    "path": [
+                      "address"
+                    ],
+                    "query": [
+                      {
+                        "key": "personId",
+                        "value": "1"
+                      }
+                    ]
+                  }
+                },
+                "response": [
+                  
+                ],
+                "uid": "15716447-575ecfc5-9ab2-4798-ac1e-bbe9ef63bd9b"
+              },
+              {
+                "name": "Get Billing Address By PersonId",
+                "id": "3dafc9d8-575e-4a81-a39f-d60f2b3cca8c",
+                "protocolProfileBehavior": {
+                  "disableBodyPruning": true
+                },
+                "request": {
+                  "method": "GET",
+                  "header": [
+                    
+                  ],
+                  "url": {
+                    "raw": "{{person-host}}/address/billingAddress?personId=1",
+                    "host": [
+                      "{{person-host}}"
+                    ],
+                    "path": [
+                      "address",
+                      "billingAddress"
+                    ],
+                    "query": [
+                      {
+                        "key": "personId",
+                        "value": "1"
+                      }
+                    ]
+                  }
+                },
+                "response": [
+                  
+                ],
+                "uid": "15716447-3dafc9d8-575e-4a81-a39f-d60f2b3cca8c"
+              },
+              {
+                "name": "Get Shipping Address By Person Id",
+                "id": "abfa62b9-59c9-4bdd-8959-c99d40b80e75",
+                "protocolProfileBehavior": {
+                  "disableBodyPruning": true
+                },
+                "request": {
+                  "method": "GET",
+                  "header": [
+                    
+                  ],
+                  "url": {
+                    "raw": "{{person-host}}/address/shippingAddress?personId=1",
+                    "host": [
+                      "{{person-host}}"
+                    ],
+                    "path": [
+                      "address",
+                      "shippingAddress"
+                    ],
+                    "query": [
+                      {
+                        "key": "personId",
+                        "value": "1"
+                      }
+                    ]
+                  }
+                },
+                "response": [
+                  
+                ],
+                "uid": "15716447-abfa62b9-59c9-4bdd-8959-c99d40b80e75"
+              }
+            ],
+            "id": "630f7e6d-34e1-4a2b-8d3e-6511caaee1e0",
+            "uid": "15716447-630f7e6d-34e1-4a2b-8d3e-6511caaee1e0"
+          },
+          {
+            "name": "Person",
+            "item": [
+              {
+                "name": "Create a person",
+                "id": "4aa5c2f5-1ac8-4467-bcd8-ef326f692e1c",
+                "protocolProfileBehavior": {
+                  "disableBodyPruning": true
+                },
+                "request": {
+                  "method": "POST",
+                  "header": [
+                    {
+                      "key": "Authorization",
+                      "value": "{{token}}",
+                      "type": "text"
+                    }
+                  ],
+                  "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"firstName\":\"Francisco\",\n    \"lastName\":\"Diaz\",\n    \"birth\":\"1999-02-16\",\n    \"email\":\"asd@gmail.com\",\n    \"password\": \"123\",\n    \"role\": 1\n}",
+                    "options": {
+                      "raw": {
+                        "language": "json"
+                      }
+                    }
+                  },
+                  "url": {
+                    "raw": "{{host}}/person",
+                    "host": [
+                      "{{host}}"
+                    ],
+                    "path": [
+                      "person"
+                    ]
+                  }
+                },
+                "response": [
+                  
+                ],
+                "uid": "15716447-4aa5c2f5-1ac8-4467-bcd8-ef326f692e1c"
+              },
+              {
+                "name": "Get Persons",
+                "id": "ac42e06f-9d28-435e-a5a5-fce3c5daedf4",
+                "protocolProfileBehavior": {
+                  "disableBodyPruning": true
+                },
+                "request": {
+                  "method": "GET",
+                  "header": [
+                    {
+                      "warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+                      "key": "Authorization",
+                      "value": "{{token}}",
+                      "type": "text"
+                    }
+                  ],
+                  "url": {
+                    "raw": "{{host}}/person",
+                    "host": [
+                      "{{host}}"
+                    ],
+                    "path": [
+                      "person"
+                    ]
+                  }
+                },
+                "response": [
+                  
+                ],
+                "uid": "15716447-ac42e06f-9d28-435e-a5a5-fce3c5daedf4"
+              },
+              {
+                "name": "Get Person By Id",
+                "id": "4d7e8fc0-70bc-4bb7-a5d6-43a8feb4bbdf",
+                "protocolProfileBehavior": {
+                  "disableBodyPruning": true
+                },
+                "request": {
+                  "method": "GET",
+                  "header": [
+                    {
+                      "warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+                      "key": "Authorization",
+                      "value": "{{token}}",
+                      "type": "text"
+                    }
+                  ],
+                  "url": {
+                    "raw": "{{host}}/person/1",
+                    "host": [
+                      "{{host}}"
+                    ],
+                    "path": [
+                      "person",
+                      "1"
+                    ]
+                  }
+                },
+                "response": [
+                  
+                ],
+                "uid": "15716447-4d7e8fc0-70bc-4bb7-a5d6-43a8feb4bbdf"
+              },
+              {
+                "name": "Get Person By Email",
+                "id": "c4b2bd65-dce6-4d60-8c8e-35fb1e07a2e7",
+                "protocolProfileBehavior": {
+                  "disableBodyPruning": true
+                },
+                "request": {
+                  "method": "GET",
+                  "header": [
+                    {
+                      "key": "Authorization",
+                      "value": "{{token}}",
+                      "type": "text"
+                    }
+                  ],
+                  "url": {
+                    "raw": "{{host}}/person?email=carlo@gmail.com",
+                    "host": [
+                      "{{host}}"
+                    ],
+                    "path": [
+                      "person"
+                    ],
+                    "query": [
+                      {
+                        "key": "email",
+                        "value": "carlo@gmail.com"
+                      }
+                    ]
+                  }
+                },
+                "response": [
+                  
+                ],
+                "uid": "15716447-c4b2bd65-dce6-4d60-8c8e-35fb1e07a2e7"
+              }
+            ],
+            "id": "c89ca56d-5119-47ab-b814-9c283e8b1e7c",
+            "uid": "15716447-c89ca56d-5119-47ab-b814-9c283e8b1e7c"
+          }
+        ],
+        "id": "ee6a15b0-b3c6-4073-a4d5-522a6a42a881",
+        "uid": "15716447-ee6a15b0-b3c6-4073-a4d5-522a6a42a881"
+      },
+      {
+        "name": "microservicio-delivery",
+        "item": [
+          {
+            "name": "get deliveries",
+            "id": "0abf70e4-36e6-47a0-abfd-46b034c4061b",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "GET",
+              "header": [
+                
+              ],
+              "url": {
+                "raw": "{{delivery-host}}/deliveries",
+                "host": [
+                  "{{delivery-host}}"
+                ],
+                "path": [
+                  "deliveries"
+                ]
+              }
+            },
+            "response": [
+              
+            ],
+            "uid": "15716447-0abf70e4-36e6-47a0-abfd-46b034c4061b"
+          },
+          {
+            "name": "post delivery",
+            "id": "6da25c76-43c4-4cd4-aa52-f0c9273cccc0",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "POST",
+              "header": [
+                
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\r\n  \"deliveryAddress\": {\r\n    \"city\": \"bogota\",\r\n    \"country\": \"colombia\",\r\n    \"department\": 10,\r\n    \"floorNumber\": 10,\r\n    \"houseNumber\": 10,\r\n    \"province\": \"cundinamarca\",\r\n    \"street\": \"cra 7 sur\"\r\n  },\r\n  \"idCheckout\": 1,\r\n  \"idPerson\": 1,\r\n  \"idPublication\": 1,\r\n  \"quantity\": 10\r\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "url": {
+                "raw": "{{delivery-host}}/deliveries",
+                "host": [
+                  "{{delivery-host}}"
+                ],
+                "path": [
+                  "deliveries"
+                ]
+              }
+            },
+            "response": [
+              
+            ],
+            "uid": "15716447-6da25c76-43c4-4cd4-aa52-f0c9273cccc0"
+          },
+          {
+            "name": "cancel delivery",
+            "id": "78fe1cac-91e6-4c87-82de-a50f2c30d78f",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "POST",
+              "header": [
+                
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\r\n  \"deliveryAddress\": {\r\n    \"city\": \"bogota\",\r\n    \"country\": \"colombia\",\r\n    \"department\": 10,\r\n    \"floorNumber\": 10,\r\n    \"houseNumber\": 10,\r\n    \"province\": \"cundinamarca\",\r\n    \"street\": \"cra 7 sur\"\r\n  },\r\n  \"idCheckout\": 1,\r\n  \"idPerson\": 1,\r\n  \"idPublication\": 1,\r\n  \"quantity\": 10\r\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "url": {
+                "raw": "{{delivery-host}}/deliveries/cancel/1",
+                "host": [
+                  "{{delivery-host}}"
+                ],
+                "path": [
+                  "deliveries",
+                  "cancel",
+                  "1"
+                ]
+              }
+            },
+            "response": [
+              
+            ],
+            "uid": "15716447-78fe1cac-91e6-4c87-82de-a50f2c30d78f"
+          },
+          {
+            "name": "deliver order",
+            "id": "c1c32456-9dda-4090-83a0-5cea6abcbd72",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "POST",
+              "header": [
+                
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\r\n  \"deliveryAddress\": {\r\n    \"city\": \"bogota\",\r\n    \"country\": \"colombia\",\r\n    \"department\": 10,\r\n    \"floorNumber\": 10,\r\n    \"houseNumber\": 10,\r\n    \"province\": \"cundinamarca\",\r\n    \"street\": \"cra 7 sur\"\r\n  },\r\n  \"idCheckout\": 1,\r\n  \"idPerson\": 1,\r\n  \"idPublication\": 1,\r\n  \"quantity\": 10\r\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "url": {
+                "raw": "{{delivery-host}}/deliveries/deliver/1",
+                "host": [
+                  "{{delivery-host}}"
+                ],
+                "path": [
+                  "deliveries",
+                  "deliver",
+                  "1"
+                ]
+              }
+            },
+            "response": [
+              
+            ],
+            "uid": "15716447-c1c32456-9dda-4090-83a0-5cea6abcbd72"
+          },
+          {
+            "name": "take order",
+            "id": "32ae82a8-3a5d-4237-a1b3-679b799b7622",
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true
+            },
+            "request": {
+              "method": "POST",
+              "header": [
+                
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\r\n  \"deliveryAddress\": {\r\n    \"city\": \"bogota\",\r\n    \"country\": \"colombia\",\r\n    \"department\": 10,\r\n    \"floorNumber\": 10,\r\n    \"houseNumber\": 10,\r\n    \"province\": \"cundinamarca\",\r\n    \"street\": \"cra 7 sur\"\r\n  },\r\n  \"idCheckout\": 1,\r\n  \"idPerson\": 1,\r\n  \"idPublication\": 1,\r\n  \"quantity\": 10\r\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              },
+              "url": {
+                "raw": "{{delivery-host}}/deliveries/take/1",
+                "host": [
+                  "{{delivery-host}}"
+                ],
+                "path": [
+                  "deliveries",
+                  "take",
+                  "1"
+                ]
+              }
+            },
+            "response": [
+              
+            ],
+            "uid": "15716447-32ae82a8-3a5d-4237-a1b3-679b799b7622"
+          }
+        ],
+        "id": "119c895b-67cf-4586-a548-9ba9a52ab886",
+        "uid": "15716447-119c895b-67cf-4586-a548-9ba9a52ab886"
+      },
+      {
+        "name": "microservicio-cart",
+        "item": [
+          {
+            "name": "checkout",
+            "item": [
+              {
+                "name": "Get Checkouts By Person JWT Id",
+                "id": "996f435a-2f01-4194-9ff9-14f6293699e7",
+                "protocolProfileBehavior": {
+                  "disableBodyPruning": true
+                },
+                "request": {
+                  "method": "GET",
+                  "header": [
+                    
+                  ],
+                  "url": {
+                    "raw": "{{cart-host}}/checkouts",
+                    "host": [
+                      "{{cart-host}}"
+                    ],
+                    "path": [
+                      "checkouts"
+                    ]
+                  }
+                },
+                "response": [
+                  
+                ],
+                "uid": "15716447-996f435a-2f01-4194-9ff9-14f6293699e7"
+              },
+              {
+                "name": "Get Checkout By Id",
+                "id": "40b1fd95-7f8e-45c3-90ea-c39028fa6190",
+                "protocolProfileBehavior": {
+                  "disableBodyPruning": true
+                },
+                "request": {
+                  "method": "GET",
+                  "header": [
+                    
+                  ],
+                  "url": {
+                    "raw": "{{cart-host}}/checkout/1",
+                    "host": [
+                      "{{cart-host}}"
+                    ],
+                    "path": [
+                      "checkout",
+                      "1"
+                    ]
+                  }
+                },
+                "response": [
+                  
+                ],
+                "uid": "15716447-40b1fd95-7f8e-45c3-90ea-c39028fa6190"
+              },
+              {
+                "name": "Create Checkout by person id",
+                "id": "4db628a9-6eb8-4cab-ad75-f5414d3cabe7",
+                "protocolProfileBehavior": {
+                  "disableBodyPruning": true
+                },
+                "request": {
+                  "method": "POST",
+                  "header": [
+                    
+                  ],
+                  "url": {
+                    "raw": "{{cart-host}}/checkouts",
+                    "host": [
+                      "{{cart-host}}"
+                    ],
+                    "path": [
+                      "checkouts"
+                    ]
+                  }
+                },
+                "response": [
+                  
+                ],
+                "uid": "15716447-4db628a9-6eb8-4cab-ad75-f5414d3cabe7"
+              }
+            ],
+            "id": "ce460113-2fd7-45fe-afce-9dd003369b62",
+            "uid": "15716447-ce460113-2fd7-45fe-afce-9dd003369b62"
+          },
+          {
+            "name": "shopping-cart",
+            "item": [
+              {
+                "name": "Get Shopping cart by person id",
+                "id": "e568b68f-ea19-4311-a6c8-0f6a4fae36dd",
+                "protocolProfileBehavior": {
+                  "disableBodyPruning": true
+                },
+                "request": {
+                  "method": "GET",
+                  "header": [
+                    
+                  ],
+                  "url": {
+                    "raw": ""
+                  }
+                },
+                "response": [
+                  
+                ],
+                "uid": "15716447-e568b68f-ea19-4311-a6c8-0f6a4fae36dd"
+              },
+              {
+                "name": "Add Product to Shopping Cart",
+                "id": "a8a88699-be8c-4991-b8df-996c013d230a",
+                "protocolProfileBehavior": {
+                  "disableBodyPruning": true
+                },
+                "request": {
+                  "method": "POST",
+                  "header": [
+                    
+                  ],
+                  "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"publicationId\": \"1\",\n  \"quantity\": 10\n}",
+                    "options": {
+                      "raw": {
+                        "language": "json"
+                      }
+                    }
+                  },
+                  "url": {
+                    "raw": ""
+                  }
+                },
+                "response": [
+                  
+                ],
+                "uid": "15716447-a8a88699-be8c-4991-b8df-996c013d230a"
+              },
+              {
+                "name": "Clear Shopping Cart",
+                "id": "f74a00e5-ec4b-46d5-b798-d3063cd5cb5e",
+                "protocolProfileBehavior": {
+                  "disableBodyPruning": true
+                },
+                "request": {
+                  "method": "POST",
+                  "header": [
+                    
+                  ],
+                  "url": {
+                    "raw": "{{cart-host}}/shopping-cart/clear",
+                    "host": [
+                      "{{cart-host}}"
+                    ],
+                    "path": [
+                      "shopping-cart",
+                      "clear"
+                    ]
+                  }
+                },
+                "response": [
+                  
+                ],
+                "uid": "15716447-f74a00e5-ec4b-46d5-b798-d3063cd5cb5e"
+              },
+              {
+                "name": "Delete Product of shopping cart",
+                "id": "4086e0a7-a18b-4b8a-9188-dc53f5e62c07",
+                "protocolProfileBehavior": {
+                  "disableBodyPruning": true
+                },
+                "request": {
+                  "method": "DELETE",
+                  "header": [
+                    
+                  ],
+                  "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"publicationId\": \"1\",\n  \"quantity\": 10\n}",
+                    "options": {
+                      "raw": {
+                        "language": "json"
+                      }
+                    }
+                  },
+                  "url": {
+                    "raw": "{{cart-host}}/shopping-cart/",
+                    "host": [
+                      "{{cart-host}}"
+                    ],
+                    "path": [
+                      "shopping-cart",
+                      ""
+                    ]
+                  }
+                },
+                "response": [
+                  
+                ],
+                "uid": "15716447-4086e0a7-a18b-4b8a-9188-dc53f5e62c07"
+              }
+            ],
+            "id": "d11d169e-dba0-487f-bb1f-1a7181878fc2",
+            "uid": "15716447-d11d169e-dba0-487f-bb1f-1a7181878fc2"
+          }
+        ],
+        "id": "0bfba628-7295-4cfc-a799-a7f17898a94b",
+        "uid": "15716447-0bfba628-7295-4cfc-a799-a7f17898a94b"
+      }
+    ],
+    "auth": {
+      "type": "bearer",
+      "bearer": [
+        {
+          "key": "token",
+          "value": "{{token}}",
+          "type": "string"
+        }
+      ]
+    },
+    "event": [
+      {
+        "listen": "prerequest",
+        "script": {
+          "type": "text/javascript",
+          "exec": [
+            ""
+          ],
+          "id": "19d4bd0e-1ff9-4072-9e94-dbc7b7936287"
+        }
+      },
+      {
+        "listen": "test",
+        "script": {
+          "type": "text/javascript",
+          "exec": [
+            ""
+          ],
+          "id": "481b024f-0ad9-4fe7-98f8-151d3208863e"
+        }
+      }
+    ],
+    "variable": [
+      {
+        "id": "41365b86-d349-44af-9f24-256beec4eff7",
+        "key": "person-host",
+        "value": "http://localhost:8081/api",
+        "type": "string"
+      },
+      {
+        "id": "044db8df-8be0-4926-b684-a6c8026be942",
+        "key": "delivery-host",
+        "value": "http://localhost:8080/api",
+        "type": "string"
+      },
+      {
+        "id": "b791d677-a4da-44dc-865f-78bbe794c631",
+        "key": "product-host",
+        "value": "http://localhost:8082/api",
+        "type": "string"
+      },
+      {
+        "id": "f3f9caf0-e180-4806-8b23-fdaaec4fc127",
+        "key": "cart-host",
+        "value": "http://localhost:8083/api",
+        "type": "string"
+      }
+    ]
+  }
+}
